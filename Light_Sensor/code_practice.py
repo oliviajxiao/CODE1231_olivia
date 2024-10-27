@@ -12,13 +12,12 @@ button = digitalio.DigitalInOut(board.BUTTON_A)
 button.switch_to_input(pull=digitalio.Pull.DOWN)
 
 while True:
-    for i in range(0, MAX_CYCLE, 64):
+    for i in range(0, MAX_CYCLE, 1000):
         led.value = i
         time.sleep(0.01)
-    for i in range(MAX_CYCLE-1, 0, -64):
+    for i in range(MAX_CYCLE-1, 0, -1000):
         led.value = i
         time.sleep(0.01)
-        break
 
 
 # Changing colours red, green, blue
